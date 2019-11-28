@@ -1,0 +1,63 @@
+=================================================
+PEM KEY
+=================================================
+https://linuxacademy.com/guide/17385-use-putty-to-access-ec2-linux-instances-via-ssh-from-windows/
+
+
+=================================================
+Install jenkins
+=================================================
+https://medium.com/@mohan08p/install-and-configure-jenkins-on-amazon-ami-8617f0816444
+Linux Commands
+
+
+=================================================
+Launch an EC2 Instance.
+=================================================
+Linux--> t2 micro--> VPC (10.81.0.0/16)--> Subnet--> SG- Allow all ports (0.0.0.0/0)-> TAG Name-->Key Pair
+
+Open in Putty
+login: ec2-user
+sudo su -
+yum remove java-1.7.0-openjdk
+yum install java-1.8.0
+yum update –y	
+wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+rpm — import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
+yum install jenkins -y	
+service jenkins start
+service jenkins status
+service jenkins start
+yum install java-1.8*
+service jenkins start
+service jenkins status
+java -version
+find /usr/lib/jvm/java1.8* | head -n 3
+find /usr/lib/jvm/java-1.8* | head -n 3
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.47.amzn1.x86_64
+PATH=$PATH:$JAVA_HOME
+service jenkins status
+service jenkins start
+java -version
+env | grep java
+cat /var/lib/jenkins/secrets/initialAdminPassword
+yum install git-bare
+yum install git-core
+
+
+=================================================
+Jenkins Login:
+==============================
+ec2-52-15-126-206.us-east-2.compute.amazonaws.com:8080
+
+
+=================================================
+Git Commands
+==============================
+git clone git clone https://github.com/anwesha1993/aviva-testing.git
+cd aviva-testing
+mkdir jenkins
+vi job
+git add -A && git commit -m "Initial commit" && git push origin
+git status
+git log

@@ -1,0 +1,9 @@
+git init
+mkdir jenkins
+vi job
+git add.
+git commit -m "Initial commit"
+git push origin
+git status
+git log
+

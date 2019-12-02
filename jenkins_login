@@ -1,0 +1,9 @@
+ec2-52-15-126-206.us-east-2.compute.amazonaws.com:8080
+cat /var/lib/jenkins/secrets/initialAdminPassword (to fetch the password)
+provide username and password
+
+Goto Manage Jenkins--> Global Tool Configuration--> JDK Installation--> JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.47.amzn1.x86_64--> Apply and save
+
+
+Got Manage Plugin ---> Install Pipeline, Job DSL
+

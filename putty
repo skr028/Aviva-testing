@@ -1,0 +1,26 @@
+login: ec2-user
+sudo su -
+yum remove java-1.7.0-openjdk
+yum install java-1.8.0
+yum update –y	
+wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+yum install jenkins -y	
+service jenkins start
+service jenkins status
+service jenkins start
+yum install java-1.8*
+service jenkins start
+service jenkins status
+java -version
+find /usr/lib/jvm/java1.8* | head -n 3
+find /usr/lib/jvm/java-1.8* | head -n 3
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.47.amzn1.x86_64
+PATH=$PATH:$JAVA_HOME
+service jenkins status
+service jenkins start
+java -version
+env | grep java
+cat /var/lib/jenkins/secrets/initialAdminPassword
+yum install git-bare
+yum install git-core

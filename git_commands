@@ -1,0 +1,7 @@
+git clone git clone https://github.com/anwesha1993/aviva-testing.git
+cd aviva-testing
+mkdir jenkins
+vi job
+git add -A && git commit -m "Initial commit" && git push origin
+git status
+git log

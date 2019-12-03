@@ -1,9 +1,9 @@
 pipeline {
    agent any
     parameters {
-        string(name:'GIT_URL',defaultValue:'https://github.com/skr028/Aviva_testing.git',description:'GIT URL')
-        string(name:'GIT_CRED',defaultValue:'Git_Cred',description:'GIT_CRED')
-        choice(name:'GitBrch',choices: ['Aviva_testing','master'],description: 'Git Branch')
+        string(name:'GIT_URL',defaultValue:'https://github.com/skr028/Aviva-testing.git',description:'GIT URL')
+        string(name:'Git_Cred',defaultValue:'0ea8b714-18be-4389-ad00-72e1aa2d8c90',description:'GIT_CRED')
+        choice(name:'GitBrch',choices: ['master'],description: 'Git Branch')
     }
     stages {
         stage ('Clone Repository') {
@@ -15,11 +15,10 @@ pipeline {
                         doGenerateModuleConfiguration: false,
                         extensions: [],
                         submoduleCfg: [],
-                        userRemoteConfigs: [[credentials: "${params.GIT_CRED}",url: "${params.GIT_URL}"]]])
+                        userRemoteConfigs: [[credentialsId: "${params.Git_Cred}",url: "${params.GIT_URL}"]]])
                     }
                     catch (Exception Err){
-                        echo Err;
-                        exit (1000);
+                        echo "Error";
                     }                
             
                 }    

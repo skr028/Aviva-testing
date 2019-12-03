@@ -1,0 +1,29 @@
+pipeline {
+   agent any
+    parameters {
+        string(name:'GIT_URL',defaultValue:'https://github.com/skr028/Aviva_testing.git',description:'GIT URL')
+        string(name:'GIT_CRED',defaultValue:'Git_Cred',description:'GIT_CRED')
+        choice(name:'GitBrch',choices: ['Aviva_testing','master'],description: 'Git Branch')
+    }
+    stages {
+        stage ('Clone Repository') {
+            steps {
+                script {
+                    try {
+                        checkout([$class: 'GitSCM',
+                        branches: [[name: "*/${params.GitBrch}"]],
+                        doGenerateModuleConfiguration: false,
+                        extensions: [],
+                        submoduleCfg: [],
+                        userRemoteConfigs: [[credentials: "${params.GIT_CRED}",url: "${params.GIT_URL}"]]])
+                    }
+                    catch (Exception Err){
+                        echo Err;
+                        exit (1000);
+                    }                
+            
+                }    
+             }
+          }  
+        }
+	}
